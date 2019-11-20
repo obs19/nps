@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+    <configuration>
+        <custom-converters>
+            <converter type="com.cci.payments.util.converter.LocalDateTimeToDateConverter">
+                <class-a>java.time.LocalDateTime</class-a>
+                <class-b>java.util.Date</class-b>
+            </converter>
+            <converter type="com.cci.payments.util.converter.StringToDictionaryConverter">
+                <class-a>java.lang.String</class-a>
+                <class-b>com.cci.payments.model.Dictionary</class-b>
+            </converter>
+            <converter type="com.cci.payments.util.converter.PaymentToPaymentHistoryConverter">
+                <class-a>com.cci.payments.model.Payment</class-a>
+                <class-b>com.cci.payments.dto.PaymentHistoryDTO</class-b>
+            </converter>
+        </custom-converters>
+    </configuration>
+
+    <mapping map-null="false" map-empty-string="false" trim-strings="true" wildcard="true">
+        <class-a>com.cci.payments.model.Payment</class-a>
+        <class-b>com.cci.payments.dto.PaymentLastHistoryDTO</class-b>
+        <field type="one-way">
+            <a>form.clientName</a>
+            <b>clientName</b>
+        </field>
+        <field type="one-way">
+            <a>form.recipient</a>
+            <b>recipient</b>
+        </field>
+        <field type="one-way">
+            <a>form.amount</a>
+            <b>amount</b>
+        </field>
+    </mapping>
+
+    <mapping map-null="false" map-empty-string="false" trim-strings="true" wildcard="true">
+        <class-a>com.cci.payments.model.Payment</class-a>
+        <class-b>com.cci.payments.dto.PaymentDTO</class-b>
+        <field type="one-way">
+            <a>form.clientName</a>
+            <b>clientName</b>
+        </field>
+        <field type="one-way">
+            <a>form.clientITN</a>
+            <b>clientITN</b>
+        </field>
+        <field type="one-way">
+            <a>form.dictTypeOfPayment.name</a>
+            <b>dictTypeOfPayment</b>
+        </field>
+        <field type="one-way">
+            <a>form.dictRegisterName.name</a>
+            <b>dictRegisterName</b>
+        </field>
+        <field type="one-way">
+            <a>form.dictPaymentAction.name</a>
+            <b>dictPaymentAction</b>
+        </field>
+        <field type="one-way">
+            <a>form.dictCountryRegion.name</a>
+            <b>dictCountryRegion</b>
+        </field>
+        <field type="one-way">
+            <a>form.customPayeeDetails</a>
+            <b>customPayeeDetails</b>
+        </field>
+        <field type="one-way">
+            <a>form.recipient</a>
+            <b>recipient</b>
+        </field>
+        <field type="one-way">
+            <a>form.amount</a>
+            <b>amount</b>
+        </field>
+        <field type="one-way">
+            <a>form.amountTotal</a>
+            <b>amountTotal</b>
+        </field>
+    </mapping>
+
+    <mapping map-null="false" map-empty-string="false" wildcard="true">
+        <class-a>com.cci.payments.model.User</class-a>
+        <class-b>com.cci.payments.dto.UserDTO</class-b>
+    </mapping>
+
+</mappings>

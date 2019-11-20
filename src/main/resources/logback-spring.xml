@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}/}spring.log}"/>
+
+    <springProfile name="dev">
+        <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+        <logger name="com.cci" level="DEBUG"/>
+        <logger name="org.hibernate.SQL" level="INFO"/>
+        <logger name="org.hibernate.type" level="INFO"/>
+        <logger name="org.springframework" level="INFO"/>
+        <logger name="org.dozer" level="INFO"/>
+        <!--<logger name="com.zaxxer.hikari" level="ERROR"/>-->
+
+        <root level="ERROR">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+
+    </springProfile>
+
+    <!--<springProfile name="prod">-->
+        <!--<include resource="org/springframework/boot/logging/logback/defaults.xml"/>-->
+        <!--<property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}/}spring.log}"/>-->
+        <!--<include resource="org/springframework/boot/logging/logback/file-appender.xml"/>-->
+        <!--<root level="INFO">-->
+            <!--<appender-ref ref="FILE"/>-->
+        <!--</root>-->
+    <!--</springProfile>-->
+
+ </configuration>
