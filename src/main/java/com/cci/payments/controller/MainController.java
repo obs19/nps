@@ -51,40 +51,4 @@ public class MainController {
     }
 
 
-//    @GetMapping("/populateDB")
-//    public String populateDb(Model model) {
-//        int sizePayments = paymentService.populateDB();
-//        model.addAttribute("paymentsSizeInserted", sizePayments);
-//        return "greeting";
-//    }
-
-//    @GetMapping("/sizeOfPayments")
-//    public String sizeOfPayments(Model model) {
-//        model.addAttribute("paymentsSize", paymentService.countPayments());
-//        return "greeting";
-//    }
-
-//    DICT test
-//    @GetMapping("/populateDictDB")
-//    public String populateDictDB(Model model) {
-//        int sizePayments = dictionaryService.populateDB();
-//        model.addAttribute("dictSizeInserted", sizePayments);
-//        return "greeting";
-//    }
-
-
-//    @GetMapping("/sizeOfDict")
-//    public String sizeOfDict(Model model) {
-//        model.addAttribute("dictSize", dictionaryService.countDict());
-//        return "greeting";
-//    }
-
-    //    Repo test
-//    @GetMapping("/testRepoMethods")
-//    public String testRepoMethods() {
-//        dictionaryService.testRepoMethods();
-//        return "greeting";
-//    }
-
-
 }
