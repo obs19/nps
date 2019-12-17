@@ -10,6 +10,7 @@ public class Application {
         SpringApplication.run(Application.class, args);
         System.out.println("Let's the day begin!");
         System.out.println("Another commit 2");
+        System.out.println("Another commit 3");
 
     }
 
